@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,4 @@ Route::get('/operacion/{n1}/{n2}/{operacion}', function ($n1, $n2, $operacion) {
         return 'Operación no válida. Las operaciones válidas son: suma, resta, multiplicacion, division.';
     }
 })->where(['n1' => '[0-9]+', 'n2' => '[0-9]+', 'operacion' => 'suma|resta|multiplicacion|division']);
+Route::get('/user', [UserController::class, 'index']);
